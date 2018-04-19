@@ -16,12 +16,19 @@
         ]
     },
     "for loop": {
-        "prefix": "#loop",
+        "prefix": "#for",
         "description": "For loop",
         "body": [
-            "#loop(${array}, \"${string}\") {",
+            "#for(${object} in ${array}) { <li>#(${object}.name)</li> }",
             "\t$0",
             "}"
+        ]
+    },
+    "count": {
+        "prefix": "#count",
+        "description": "Count of objects in array",
+        "body": [
+            "#count(${array})"
         ]
     },
     "index": {
@@ -51,18 +58,18 @@
             "}"
         ]
     },
-    "import leaf": {
-        "prefix": "#import",
+    "get leaf": {
+        "prefix": "#get",
         "description": "Import an exported Leaf block onto here",
         "body": [
-            "#import(\"${string}\")"
+            "#get(\"${string}\")"
         ]
     },
-    "export leaf": {
-        "prefix": "#export",
+    "set leaf": {
+        "prefix": "#set",
         "description": "Export a Leaf block",
         "body": [
-            "#export(\"${string}\") {",
+            "#set(\"${string}\") {",
             "\t$0",
             "}"
         ]
